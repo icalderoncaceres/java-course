@@ -1,4 +1,5 @@
 package ejercicios;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.io.File;
 import java.util.ArrayList;
@@ -64,6 +65,29 @@ public class Opcion {
 				
 				while(sc.hasNextLine()){
 					String linea=sc.nextLine();
+					String fila="";
+				     for(char c:linea.toCharArray()){
+			    		 if(c!='0' && c!=' '){
+			    			 fila+=c;
+			    		 }
+				     }
+				     matriz.add(fila);
+				     System.out.println(linea);
+				}
+				/*
+				 * Imprimimos la nueva matriz
+				 */
+				System.out.println("MATRIZ SIN CEROS");
+				Iterator<String> iteratorMatriz=matriz.iterator();
+				while(iteratorMatriz.hasNext()){
+					String fila=iteratorMatriz.next();
+					String ac="";
+					for(char c:fila.toCharArray()){
+						ac+=c + " ";
+					}
+					if(ac!=""){
+						System.out.println(ac);						
+					}
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
